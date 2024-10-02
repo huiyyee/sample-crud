@@ -50,7 +50,7 @@ const CRUD = () => {
 	}, [])
 
 	const getData = () => {
-		axios.get('https://localhost:7212/api/Employee').then(res => {
+		axios.get('https://sample-crud-lzyo.vercel.app/api/Employee').then(res => {
 			setData(res.data);
         })
 		.catch(err => {console.log(err)})
@@ -59,7 +59,7 @@ const CRUD = () => {
 
 	const handleEdit = (id) => {
 		handleShow();
-		axios.get(`https://localhost:7212/api/Employee/${id}`).then((res)=>{
+		axios.get(`https://sample-crud-lzyo.vercel.app/api/Employee/${id}`).then((res)=>{
             setEditID(id);
             setEditName(res.data.name);
             setEditAge(res.data.age);
@@ -72,7 +72,7 @@ const CRUD = () => {
 
 	const handleDelete = (id) => {
 		if(window.confirm('Are you sure you want to delete this record?')) {
-			const url = `https://localhost:7212/api/Employee/${id}`; 
+			const url = `https://sample-crud-lzyo.vercel.app/api/Employee/${id}`; 
 	
 			axios.delete(url)
 				.then((result) => {
@@ -98,7 +98,7 @@ const CRUD = () => {
 	
 
 	const handleUpdate = () => {
-		const url = `https://localhost:7212/api/Employee/`; 
+		const url = `https://sample-crud-lzyo.vercel.app/api/Employee/`; 
 		const updatedData = {
 			id: editID,
 			name: editName, 
@@ -123,7 +123,7 @@ const CRUD = () => {
 	
 
 	const handleSave = () => {
-		const url = 'https://localhost:7212/api/Employee';
+		const url = 'https://sample-crud-lzyo.vercel.app/api/Employee';
 		const data = {
 			"name": name,
 			"age": age, 
